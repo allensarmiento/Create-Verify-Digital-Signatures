@@ -128,8 +128,8 @@ def loadSig(fileName):
 	# element tuple
 	f = open(fileName, "r")
 	contents = f.read()
-	value = int(contents, 10)
-	element = (value)
+	value = int(contents)
+	element = tuple([value])
 
 	return element
 	
@@ -147,6 +147,7 @@ def verifySig(theHash, sig, veriKey):
 	# signature using the verify() function of the
 	# key and return the result
 	verify = veriKey.verify(theHash, sig)
+	print(verify)
 	if verify == True:
 		return True
 	else:
