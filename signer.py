@@ -130,9 +130,7 @@ def loadSig(fileName):
 	contents = f.read()
 	value = int(contents)
 	element = ([value])
-
-	print "Contents in loadSig:\n", contents
-	print "Signature in loadSig:\n", element[0]
+	
 	return element
 
 #################################################
@@ -182,6 +180,8 @@ def main():
 		#       2. Save the signature to the file
 		fileSig = getFileSig(keyFileName, key)
 		saveSig(sigFileName, fileSig)
+
+		print "Signature saved to file ", sigFileName
 
 	# We are verifying the signature
 	elif mode == "verify":
