@@ -129,10 +129,12 @@ def loadSig(fileName):
 	f = open(fileName, "r")
 	contents = f.read()
 	value = int(contents)
-	element = tuple([value])
+	element = ([value])
 
+	print "Contents in loadSig:\n", contents
+	print "Signature in loadSig:\n", element[0]
 	return element
-	
+
 #################################################
 # Verifies the signature
 # @param theHash - the hash 
@@ -146,12 +148,9 @@ def verifySig(theHash, sig, veriKey):
 	# TODO: Verify the hash against the provided
 	# signature using the verify() function of the
 	# key and return the result
-	verify = veriKey.verify(theHash, sig)
-	print(verify)
-	if verify == True:
-		return True
-	else:
-		return False
+	result = veriKey.verify(theHash, sig)
+
+	return result
 
 # The main function
 def main():
@@ -183,8 +182,6 @@ def main():
 		#       2. Save the signature to the file
 		fileSig = getFileSig(keyFileName, key)
 		saveSig(sigFileName, fileSig)
-		
-		print "Signature saved to file ", sigFileName
 
 	# We are verifying the signature
 	elif mode == "verify":
