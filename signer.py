@@ -178,7 +178,7 @@ def main():
 		
 		# TODO: 1. Get the file signature
 		#       2. Save the signature to the file
-		fileSig = getFileSig(keyFileName, key)
+		fileSig = getFileSig(inputFileName, key)
 		saveSig(sigFileName, fileSig)
 
 		print "Signature saved to file ", sigFileName
