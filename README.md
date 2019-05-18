@@ -20,3 +20,6 @@ Verify with the following:
 ```
 python signer.py pubKey.pem test.sig test.txt verify
 ```
+
+## Extra Credit Implemented: No
+
