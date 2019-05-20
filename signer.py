@@ -39,7 +39,7 @@ def loadKey(keyPath):
 ##################################################
 def digSig(sigKey, string):
 
-	# TODO: return the signature of the file
+	# return the signature of the file
 	return sigKey.sign(string, '')
 
 ##########################################################
@@ -50,7 +50,6 @@ def digSig(sigKey, string):
 ##########################################################
 def getFileSig(fileName, privKey):
 
-	# TODO:
 	# 1. Open the file
 	f = open(fileName, "r")
 
@@ -76,7 +75,6 @@ def getFileSig(fileName, privKey):
 ##########################################################
 def verifyFileSig(fileName, pubKey, signature):
 
-	# TODO:
 	# 1. Read the contents of the input file (fileName)
 	f = open(fileName, "r")
 	contents = f.read()
@@ -103,7 +101,6 @@ def verifyFileSig(fileName, pubKey, signature):
 ############################################
 def saveSig(fileName, signature):
 
-	# TODO:
 	# Signature is a tuple with a single value.
 	# Get the first value of the tuple, convert it
 	# to a string, and save it to the file (i.e., indicated
@@ -122,7 +119,7 @@ def saveSig(fileName, signature):
 ###########################################
 def loadSig(fileName):
 
-	# TODO: Load the signature from the specified file.
+	# Load the signature from the specified file.
 	# Open the file, read the signature string, convert it
 	# into an integer, and then put the integer into a single
 	# element tuple
@@ -143,7 +140,7 @@ def loadSig(fileName):
 #################################################
 def verifySig(theHash, sig, veriKey):
 
-	# TODO: Verify the hash against the provided
+	# Verify the hash against the provided
 	# signature using the verify() function of the
 	# key and return the result
 	result = veriKey.verify(theHash, sig)
@@ -170,13 +167,13 @@ def main():
 	# The mode i.e., sign or verify
 	mode = sys.argv[4]
 
-	# TODO: Load the key using the loadKey() function provided.
+	# Load the key using the loadKey() function provided.
 	key = loadKey(keyFileName)
 
 	# We are signing
 	if mode == "sign":
 
-		# TODO: 1. Get the file signature
+		#       1. Get the file signature
 		#       2. Save the signature to the file
 		fileSig = getFileSig(inputFileName, key)
 		saveSig(sigFileName, fileSig)
